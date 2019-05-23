@@ -304,6 +304,11 @@ PRODUCT_PACKAGES += \
     android.hardware.radio.config@1.0 \
     android.hardware.secure_element@1.0
 
+# Telephony
+PRODUCT_PACKAGES += \
+    android.hardware.radio.config@1.0 \
+    android.hardware.secure_element@1.0
+
 # Ramdisk
 PRODUCT_PACKAGES += \
     fstab.qcom \
