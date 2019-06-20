@@ -61,7 +61,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.camera.gyro.android=1 \
     persist.camera.HAL3.enabled=1 \
     persist.camera.is_type=1 \
-    vendor.camera.hal1.packagelist=com.whatsapp,com.intsig.camscanner,com.instagram.android,com.snapchat.android \
+    vendor.camera.hal1.packagelist=com.whatsapp,com.intsig.camscanner,com.instagram.android \
     vidc.enc.dcvs.extra-buff-count=2
 
 # CNE
@@ -79,10 +79,34 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Display
 PRODUCT_PROPERTY_OVERRIDES += \
+    debug.egl.hw=0 \
+    debug.sf.hw=0 \
+    debug.sf.disable_hwc_vds=1 \
+    debug.sf.recomputecrop=0 \
+    debug.sf.latch_unsignaled=1 \
+    dev.pm.dyn_samplingrate=1 \
+    persist.demo.hdmirotationlock=false \
+    bpersist.hwc.enable_vds=1 \
+    persist.sys.wfd.virtual=0 \
     ro.opengles.version=196608 \
     ro.vendor.display.cabl=2 \
-    ro.sf.lcd_density=295 \
-    vendor.display.enable_default_color_mode=1
+    ro.qualcomm.svi=0 \
+    ro.sf.lcd_density=320 \
+    persist.hwc.mdpcomp.enable=true \
+    sys.display-size=3840x2160 \
+    sdm.debug.disable_rotator_split=1 \
+    sdm.debug.disable_skip_validate=1 \
+    sdm.debug.rotator_downscale=1 \
+    sdm.perf_hint_window=50 \
+    qemu.hw.mainkeys=1 \
+    vendor.gralloc.enable_fb_ubwc=1 \
+    vendor.display.disable_skip_validate=1 \
+    vendor.display.perf_hint_window=50 \
+    debug.hwui.use_buffer_age=false \
+    persist.graphics.vulkan.disable=true \
+    persist.debug.wfd.enable=1 \
+    debug.sdm.support_writeback=0 \
+    debug.composition.type=gpu
 
 # Fm
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -92,6 +116,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.min.fling_velocity=160 \
     ro.max.fling_velocity=20000
+
+#frp
+PRODUCT_PROPERTY_OVERRIDES += \
+ro.frp.pst=/dev/block/bootdevice/by-name/config
 
 # GPS
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -138,6 +166,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Perf
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.extension_library=libqti-perfd-client.so \
+    vendor.perf.gestureflingboost.enable=true \
     ro.vendor.qti.sys.fw.bg_apps_limit=60
 
 # Radio
